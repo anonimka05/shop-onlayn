@@ -9,7 +9,7 @@ export class CategoryService {
   constructor(@InjectModel(Category) private categoryModel: typeof Category) {}
 
   async create(createCategoryDto: CreateCategoryDto) {
-    return await this.categoryModel.create({createCategoryDto})
+    return await this.categoryModel.create({ createCategoryDto });
   }
 
   async findAll() {
@@ -21,11 +21,13 @@ export class CategoryService {
   }
 
   async update(id: number, updateCategoryDto: UpdateCategoryDto) {
-    return await this.categoryModel.update({updateCategoryDto}, {where: {id}} )
+    return await this.categoryModel.update(
+      { name: updateCategoryDto },
+      { where: { id } },
+    );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} category`;
+  async remove(id: number) {
+    return await this.categoryModel.destroy({ where: { id } });
   }
 }
-//?  microservice, product microsec=rvice tusish - typeORM da yaratis kk, database nomi typeORMe

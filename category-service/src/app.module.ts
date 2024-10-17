@@ -15,7 +15,7 @@ import { Category } from './modules/category/model';
       database: 'n13',
       models: [Category],
       autoLoadModels: true,
-      sync: { force: true },
+      // sync: { force: true },
       synchronize: true,
     }),
     CategoryModule,

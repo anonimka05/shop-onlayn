@@ -9,12 +9,16 @@ export class CategoryService {
     return this.categoryClient.getAllCategories();
   }
 
-  createCategory(name: string) {
-    return this.categoryClient.createCt(name);
+  getSingleCategory(id: number) {
+    return this.categoryClient.getSingleCategory(id);
   }
 
-  updateCategory(id: number, payload: string) {
-    return this.categoryClient.updateCategory(id,payload);
+  createCategory(name: string) {
+    return this.categoryClient.createCategory(name);
+  }
+
+  updateCategory(payload: { id: number; name: string }) {
+    return this.categoryClient.updateCategory(payload);
   }
 
   deleteCategory(id: number) {

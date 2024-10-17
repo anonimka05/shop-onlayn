@@ -14,5 +14,6 @@ async function bootstrap() {
     },
   );
   await app.listen();
+  console.log(`Listening on port ${5001}`);
 }
 bootstrap();
