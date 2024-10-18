@@ -8,12 +8,12 @@ async function bootstrap() {
     {
       transport: Transport.TCP,
       options: {
-        port: 5001,
+        port: 5009,
         host: 'localhost',
       },
     },
   );
   await app.listen();
-  console.log(`Listening on port ${5001}`);
+  console.log(`Listening on port ${5009}`);
 }
 bootstrap();
